@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+// RESET AND FONT FAMILY
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif, system-ui;
+}
+
+// BODY
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg,rgba(71, 71, 252, 1) 0%, rgba(66, 224, 255, 1) 100%);
+}
+
+// CARD
+.card{
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0,0,0, .2);
+    padding: 2rem;
+    width: 25rem;
+}
+
+.input_group{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error{
+    input{
+        border-color: #ff5050;
+    }
+
+    .fa-circle-exclamation{
+        color: #ff5050;
+        opacity: 1;
+    }
+
+    small{
+        color: #ff5050;
+        display: block;
+    }
+}
+
+.success{
+    input{
+        border-color: #4eee70;
+    }
+
+    .fa-circle-check{
+        color: #4eee70;
+        opacity: 1;
+    }
+
+    small{
+        display: none;
+    }
+}
