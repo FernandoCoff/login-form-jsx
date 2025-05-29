@@ -15,7 +15,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(90deg,rgba(71, 71, 252, 1) 0%, rgba(66, 224, 255, 1) 100%);
+    background: linear-gradient(90deg,#4747fc 0%, #42e0ff 100%);
 }
 
 // CARD
@@ -61,5 +61,18 @@ body{
 
     small{
         display: none;
+    }
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    a{
+        font-size: 0.75rem;
+        color: #6464fd;
+        font-weight: 500;
     }
 }

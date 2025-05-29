@@ -27,7 +27,7 @@ const Login = () =>{
             setStatusEmail('')
         }else if(!regex.test(email)){
             setStatusEmail('error')
-            setSmallEmail('Email Inválido!')
+            setSmallEmail('Invalid Email!')
         }else{
             setStatusEmail('success')
         }
@@ -46,11 +46,21 @@ const Login = () =>{
 
     return(
         <form method="post" className="card">
-            <Title text="login"/>
+            <div class="header">
+                <Title text="login"/>
+                <a href="#">Don't have account?</a>
+            </div>
             <div className="input_group">
                 <Input name="email" type="email" placeholder="Email" getValue={setEmail} status={statusEmail} small={smallEmail}></Input>
                 <Input name="password" type="password" placeholder="Password" getValue={setPassword} status={statusPassword} small={smallPassword}></Input>
             </div>
+            <footer>
+                <div>
+                    <input type="checkbox" id="checkbox"/>
+                    <label htmlFor="checkbox">Remember-me</label>
+                </div>
+                <a href="#">Forgot Password?</a>
+            </footer>
             <Button type="submit" text="Login" click={submit}/>
         </form>
     )
