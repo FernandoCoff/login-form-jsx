@@ -3,7 +3,7 @@ import Title from "../../form components/title/Title"
 import Input from "../../form components/inputs/Input"
 import { useEffect, useState } from "react"
 
-const Register = () => {
+const Register = ({setLogin}) => {
 
     // VALUE
     const [name, setName] = useState('default')
@@ -12,10 +12,10 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('default')
 
     // ERROR MESSAGE
-    const [smallName, setSmallName] = useState('')
-    const [smallEmail, setSmallEmail] = useState('')
-    const [smallPassword, setSmallPassword] = useState('')
-    const [smallConfirmPass, setSmallConfirmPass] = useState('')
+    const [smallName, setSmallName] = useState('default')
+    const [smallEmail, setSmallEmail] = useState('default')
+    const [smallPassword, setSmallPassword] = useState('default')
+    const [smallConfirmPass, setSmallConfirmPass] = useState('default')
 
     // STATUS INPUT
     const [statusName, setStatusName] = useState('')
@@ -90,7 +90,10 @@ const Register = () => {
 
     return(
         <form method="post" className="card">
+            <div className="header">
             <Title text="Register"/>
+            <p>Have an account? <a href="#" onClick={()=> setLogin()}>Login</a></p>
+            </div>
             <div className="input_group">
                 <Input name="Name" type="text" placeholder="Full Name" getValue={setName} status={statusName} small={smallName}/>
                 <Input name="email" type="email" placeholder="Email" getValue={setEmail} status={statusEmail} small={smallEmail}/>
@@ -100,9 +103,8 @@ const Register = () => {
             <footer>
                 <div>
                     <input type="checkbox" id="checkbox"/>
-                    <label htmlFor="checkbox">I gree <a href="#">terms</a></label>
+                    <label htmlFor="checkbox">I accept the <a href="#">Terms and Conditions</a></label>
                 </div>
-                <a href="#">Have account? Login</a>
             </footer>
             <Button type="submit" text="Register" click={submit}/>
         </form>

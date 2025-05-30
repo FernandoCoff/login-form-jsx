@@ -5,14 +5,14 @@ import Input from "../../form components/inputs/Input"
 import { use, useEffect, useState } from "react"
 
 
-const Login = () =>{ 
+const Login = ({setRegister, setForgot}) =>{ 
 
     const [email, setEmail] = useState('default')
     const [password, setPassword] = useState('default')
     const [statusEmail, setStatusEmail] = useState('')
     const [statusPassword, setStatusPassword] = useState('')
-    const [smallEmail, setSmallEmail] = useState('')
-    const [smallPassword, setSmallPassword] = useState('')
+    const [smallEmail, setSmallEmail] = useState('default')
+    const [smallPassword, setSmallPassword] = useState('default')
 
     // BUTTON SUBMIT
     const submit= (e) =>{
@@ -48,18 +48,18 @@ const Login = () =>{
         <form method="post" className="card">
             <div class="header">
                 <Title text="login"/>
-                <a href="#">Don't have account?</a>
+                <p>Need an account? <a href="#" onClick={()=> setRegister()}>Sign up</a></p>
             </div>
             <div className="input_group">
                 <Input name="email" type="email" placeholder="Email" getValue={setEmail} status={statusEmail} small={smallEmail}></Input>
                 <Input name="password" type="password" placeholder="Password" getValue={setPassword} status={statusPassword} small={smallPassword}></Input>
             </div>
-            <footer>
+            <footer className="Footer">
                 <div>
                     <input type="checkbox" id="checkbox"/>
                     <label htmlFor="checkbox">Remember-me</label>
                 </div>
-                <a href="#">Forgot Password?</a>
+                <a href="#" onClick={()=> setForgot()}>Forgot Password?</a>
             </footer>
             <Button type="submit" text="Login" click={submit}/>
         </form>
