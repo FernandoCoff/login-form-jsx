@@ -1,6 +1,6 @@
 import Login from "./components/froms/login/Login"
 import Register from "./components/froms/register/Register"
-import Forgot from "./components/froms/forgot/forgot"
+import Forgot from './components/froms/forgot/Forgot'
 import { useState } from "react"
 
 function App() {
