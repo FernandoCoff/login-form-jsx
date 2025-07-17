@@ -5,9 +5,9 @@ import { useState } from "react"
 
 function App() {
 
-  const authPage = () => {
-    const [currentPage, setCurrentPage] = useState('login')
-    
+  const [currentPage, setCurrentPage] = useState('login')
+
+  const renderAuthPage = () => {
     switch(currentPage){
       case 'login':
         return <Login setRegister={()=> setCurrentPage('register')} setForgot={()=> setCurrentPage('forgot')}/>
@@ -16,14 +16,13 @@ function App() {
       case 'forgot':
         return <Forgot setLogin={()=> setCurrentPage('login')} />
       default:
-        <Login/>
+        return <Login/>
     }
-
   }
 
   return (
     <>
-      {authPage()}
+      {renderAuthPage()}
     </>
   )
 }

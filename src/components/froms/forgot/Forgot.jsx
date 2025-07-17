@@ -4,13 +4,13 @@ import Input from "../../form components/inputs/Input"
 import { useEffect, useState } from "react"
 import Button from "../../form components/button/button"
 
+const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 const Forgot = ({setLogin}) => {
 
     const [email, setEmail] = useState('default')
     const [statusEmail, setStatusEmail] = useState('')
     const [smallEmail, setSmallEmail] = useState('default')
-
-    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
     useEffect(()=>{
         if(email === 'default'){

@@ -1,3 +1,4 @@
+import { useMemo } from "react"
 import Button from "../../form components/button/button"
 import Title from "../../form components/title/Title"
 import Input from "../../form components/inputs/Input"
@@ -24,9 +25,10 @@ const Register = ({setLogin}) => {
     const [statusConfirmPass, setStatusConfirmPass] = useState('')
 
     // TEST EMAIL
-    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    const nameRegex = /^[a-zA-Z\sÀ-ÿ]+$/
-    const regexPassword = /^\S.*\s.*\S$/
+
+    const regex = useMemo(() => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, []);
+    const nameRegex = useMemo(() => /^[a-zA-Z\sÀ-ÿ]+$/, []);
+    const regexPassword = useMemo(() => /^\S.*\s.*\S$/, []);
 
     // BUTTON SUBMIT
     const submit = (e) =>{
@@ -85,7 +87,7 @@ const Register = ({setLogin}) => {
             setStatusConfirmPass('success')
         }
 
-    },[name, email, password, confirmPassword])
+    },[name, email, password, confirmPassword, nameRegex, regex, regexPassword])
 
 
     return(
