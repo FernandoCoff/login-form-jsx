@@ -1,4 +1,4 @@
-import "./forgot.module.scss"
+import "./forgot.scss"
 import Title from "../../form components/title/Title"
 import Input from "../../form components/inputs/Input"
 import { useEffect, useState } from "react"

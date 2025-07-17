@@ -1,4 +1,4 @@
-import "./input.module.scss"
+import "./input.scss"
 
 const Input = ({type, name, status, placeholder, getValue, small}) =>{
     

@@ -1,4 +1,4 @@
-import "./title.module.scss"
+import "./title.scss"
 
 const Title = ({text}) => {
     return <><h2>{text}</h2></>
