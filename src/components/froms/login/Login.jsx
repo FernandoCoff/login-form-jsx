@@ -1,8 +1,8 @@
-import "./login.module.scss"
+import "./login.scss"
 import Button from "../../form components/button/button"
 import Title from "../../form components/title/Title"
 import Input from "../../form components/inputs/Input"
-import { use, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 
 const Login = ({setRegister, setForgot}) =>{ 
